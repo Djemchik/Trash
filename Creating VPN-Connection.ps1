@@ -1,0 +1,1 @@
+Add-VpnConnection -Name "HOMEByPS3" -ServerAddress "homedjemchik.ddns.net" -TunnelType "Pptp" -EncryptionLevel "NoEncryption" -RememberCredential -SplitTunneling -PassThru
