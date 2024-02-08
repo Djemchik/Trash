@@ -42,6 +42,9 @@ zip -r "$ARCHIVE_NAME" "$SOURCE_DIR"
 # Определяем IP адрес
 IP=$(get_ip_address)
 
+#Определение страны от пользователя
+Country="none"
+
 # Токен вашего бота в Telegram
 BOT_TOKEN="none"
 
