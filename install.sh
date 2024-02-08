@@ -1,22 +1,11 @@
 #!/bin/bash
 
-
-
-# Скачиваем скрипт backup.sh
-wget -O /tmp/backup.sh https://github.com/Djemchik/Trash/raw/main/backup.sh
-
 # Запрос прав суперпользователя
 sudo -v
 
 # Устанавливаем необходимые пакеты
 sudo apt update
-sudo apt install -y ntp zip
-
-# Устанавливаем Московскую временную зону
-sudo timedatectl set-timezone Europe/Moscow
-
-# Копируем скрипт в каталог /tmp
-cp /tmp/backup.sh /tmp/backup_modified.sh
+sudo apt install -y ntp zip jq
 
 # Запрос BOT_TOKEN
 read -p "Введите BOT_TOKEN: " BOT_TOKEN
@@ -54,6 +43,17 @@ else
     selected_chat_id=$(echo "$chat_info" | sed -n "${selected_chat_number}p" | awk '{print $1}')
     CHAT_ID="$selected_chat_id"
 fi
+
+# Скачиваем скрипт backup.sh
+wget -O /tmp/backup.sh https://github.com/Djemchik/Trash/raw/main/backup.sh
+
+
+
+# Устанавливаем Московскую временную зону
+sudo timedatectl set-timezone Europe/Moscow
+
+# Копируем скрипт в каталог /tmp
+cp /tmp/backup.sh /tmp/backup_modified.sh
 
 # Редактирование скрипта backup.sh
 sed -i "s/CHAT_ID=\"[^\"]*\"/CHAT_ID=\"$CHAT_ID\"/" /tmp/backup_modified.sh
