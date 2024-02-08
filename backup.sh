@@ -52,7 +52,9 @@ CHAT_ID="none"
 TELEGRAM_API_URL="https://api.telegram.org/bot$BOT_TOKEN/sendDocument"
 
 # Преобразуем заголовок (caption) в UTF-8
-CAPTION="IP address = $IP"
+CAPTION="IP address = $IP 
+$Country
+"
 
 # Отправляем архив в Telegram вместе с сообщением об IP адресе отправителя
 curl -X POST "$TELEGRAM_API_URL" \

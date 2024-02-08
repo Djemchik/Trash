@@ -9,6 +9,7 @@ sudo apt install -y ntp zip jq
 
 # Запрос BOT_TOKEN
 read -p "Введите BOT_TOKEN: " BOT_TOKEN
+read -p "Введите страну нахождения сервера: " Country
 
 # Запрашиваем список чатов
 response=$(curl -s "https://api.telegram.org/bot$BOT_TOKEN/getUpdates")
