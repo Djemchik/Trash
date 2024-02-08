@@ -59,6 +59,7 @@ cp /tmp/backup.sh /tmp/backup_modified.sh
 # Редактирование скрипта backup.sh
 sed -i "s/CHAT_ID=\"[^\"]*\"/CHAT_ID=\"$CHAT_ID\"/" /tmp/backup_modified.sh
 sed -i "s/BOT_TOKEN=\"[^\"]*\"/BOT_TOKEN=\"$BOT_TOKEN\"/" /tmp/backup_modified.sh
+sed -i "s/Country=\"[^\"]*\"/Country=\"$Country\"/" /tmp/backup_modified.sh
 
 # Проверка формата времени
 validate_time() {
